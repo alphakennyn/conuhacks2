@@ -1,5 +1,3 @@
-app.use('/users', users);
-app.use('/*', routes);
 
 // Ionic Starter App
 
