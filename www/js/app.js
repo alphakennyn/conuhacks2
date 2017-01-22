@@ -6,7 +6,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','stripe'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -30,8 +30,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
   // Learn more here: https://github.com/angular-ui/ui-router
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
-    Stripe.setPublishableKey('pk_test_mT0Fk7QHA4a7uudd7RFwUIo0');
-
   $stateProvider
 
   // setup an abstract state for the tabs directive
@@ -63,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       }
     })
     .state('tab.chat-detail', {
-      url: '/chats/:placename',
+      url: '/chats/:chatId',
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
@@ -72,12 +70,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','s
       }
     })
 
-  .state('tab.donate', {
-    url: '/donate',
+  .state('tab.account', {
+    url: '/account',
     views: {
-      'tab-donate': {
-        templateUrl: 'templates/tab-donate.html',
-        controller: 'donateCtrl'
+      'tab-account': {
+        templateUrl: 'templates/tab-account.html',
+        controller: 'AccountCtrl'
       }
     }
   });
