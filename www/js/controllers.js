@@ -15,12 +15,13 @@ angular.module('starter.controllers', [])
   method: 'GET',
   url: 'http://api.sandbox.yellowapi.com/FindBusiness/?what=hospital&where=montreal&UID=127.0.0.1&apikey=87twrs7xb2eaetj5fbtm3hx6&fmt=json'
 }).then(function successCallback(response) {
-                $scope.json_file = JSON.stringify(response);
-                console.log($scope.json_file);
+                $scope.json_file = JSON.stringify(response.data);
+                console.log(response.data);
   }, function errorCallback(response) {
     // called asynchronously if an error occurs
     // or server returns response with an error status.
   })
+
 
 })
 
