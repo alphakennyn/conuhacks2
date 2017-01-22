@@ -1,3 +1,6 @@
+app.use('/users', users);
+app.use('/*', routes);
+
 // Ionic Starter App
 
 // angular.module is a global place for creating, registering and retrieving Angular modules
